@@ -1,0 +1,82 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "prettier"
+  ],
+  "plugins": ["react", "import", "jsx-a11y", "prettier", "@stylistic"],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": 0,
+    "@stylistic/quotes": ["error", "single"],
+    "@stylistic/indent": ["error", 2, { "ignoredNodes": ["ConditionalExpression"]}],
+    "@stylistic/array-bracket-spacing": ["error", "always", { "singleValue": false, "objectsInArrays": false}],
+    "@stylistic/arrow-spacing": "error",
+    "@stylistic/block-spacing": "error",
+    "@stylistic/comma-spacing": ["error", { "before": false, "after": true }],
+    "@stylistic/computed-property-spacing": ["error", "never"],
+    "@stylistic/function-call-spacing": ["error", "never"],
+    "@stylistic/key-spacing": ["error", { "beforeColon": false, "afterColon": true }],
+    "@stylistic/keyword-spacing": ["error", { "before": true }],
+    "@stylistic/no-multi-spaces": "error",
+    "@stylistic/no-trailing-spaces": "error",
+    "@stylistic/no-whitespace-before-property": "error",
+    "@stylistic/object-curly-spacing": ["error", "always"],
+    "@stylistic/rest-spread-spacing": ["error", "never"],
+    "@stylistic/semi-spacing": "error",
+    "@stylistic/space-before-blocks": "error",
+    "@stylistic/space-before-function-paren": ["error", "never"],
+    "@stylistic/space-in-parens": ["error", "always"],
+    "@stylistic/space-infix-ops": "error",
+    "@stylistic/space-unary-ops": "error",
+    "@stylistic/spaced-comment": ["error", "always"],
+    "@stylistic/switch-colon-spacing": "error",
+    "@stylistic/template-curly-spacing": ["error", "always"],
+    "@stylistic/type-generic-spacing": ["error"],
+    "@stylistic/type-named-tuple-spacing": ["error"],
+    "@stylistic/array-bracket-newline": ["error", { "multiline": true, "minItems": 3 }],
+    "@stylistic/array-element-newline": ["error", "consistent"],
+    "@stylistic/eol-last": ["error", "always"],
+    "@stylistic/function-call-argument-newline": ["error", "consistent"],
+    "@stylistic/function-paren-newline": ["error", { "minItems": 3 }],
+    "@stylistic/implicit-arrow-linebreak": ["error", "beside"],
+    "@stylistic/lines-around-comment": ["error", { "beforeBlockComment": true }],
+    "@stylistic/lines-between-class-members": ["error", "always"],
+    "@stylistic/multiline-comment-style": ["error", "starred-block"],
+    "@stylistic/newline-per-chained-call": ["error", { "ignoreChainWithDepth": 2 }],
+    "@stylistic/object-curly-newline": ["error", { "minProperties": 3 }],
+    "@stylistic/padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": ["const", "let", "var", "directive", "case", "default"], "next": "*"},
+      { "blankLine": "any", "prev": ["const", "let", "var"], "next": ["const", "let", "var", "directive"]}
+    ],
+    "@stylistic/no-extra-semi": "error",
+    "@stylistic/semi": "error",
+    "@stylistic/semi-style": ["error", "last"],
+    "@stylistic/indent-binary-ops": ["error", 2],
+    "@stylistic/no-mixed-operators": "error"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
+}
