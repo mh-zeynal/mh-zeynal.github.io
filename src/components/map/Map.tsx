@@ -40,7 +40,7 @@ export default function Map( {
   return (
     <div className={`map-box rounded-xl overflow-hidden ${ classes }`}>
       <MapContainer
-        center={[ 51.505, -0.09 ]}
+        center={[ 35.699648, 51.338359 ]}
         zoom={12}
         scrollWheelZoom={true}
         touchZoom={true}
