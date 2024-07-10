@@ -1,3 +1,7 @@
+import Map from 'components/map/Map';
+
 export function HomePage() {
-  return <></>;
+  return <>
+    <Map />
+  </>;
 }

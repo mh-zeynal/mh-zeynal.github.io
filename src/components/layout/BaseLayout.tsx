@@ -4,16 +4,16 @@ import { Outlet } from 'react-router-dom';
 
 export function BaseLayout() {
   return (
-    <div>
+    <>
       <header>
         <Navbar />
       </header>
-      <main>
+      <main className="grow p-2">
         <Outlet />
       </main>
       <footer>
         <p>Footer Content</p>
       </footer>
-    </div>
+    </>
   );
 }
