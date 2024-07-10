@@ -53,13 +53,11 @@
     "@stylistic/array-element-newline": ["error", "consistent"],
     "@stylistic/eol-last": ["error", "always"],
     "@stylistic/function-call-argument-newline": ["error", "consistent"],
-    "@stylistic/function-paren-newline": ["error", { "minItems": 3 }],
     "@stylistic/implicit-arrow-linebreak": ["error", "beside"],
     "@stylistic/lines-around-comment": ["error", { "beforeBlockComment": true }],
     "@stylistic/lines-between-class-members": ["error", "always"],
     "@stylistic/multiline-comment-style": ["error", "starred-block"],
     "@stylistic/newline-per-chained-call": ["error", { "ignoreChainWithDepth": 2 }],
-    "@stylistic/object-curly-newline": ["error", { "minProperties": 3 }],
     "@stylistic/padding-line-between-statements": [
       "error",
       { "blankLine": "always", "prev": ["const", "let", "var", "directive", "case", "default"], "next": "*"},
