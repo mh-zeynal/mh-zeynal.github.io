@@ -15,7 +15,7 @@ export function HomePage() {
   function navigateToWeatherInfoPage() {
     if ( !selectedDate || !selectedCoordinate )
       return;
-    navigate( `/info?lat=${ selectedCoordinate?.lat }&lng=${ selectedCoordinate?.lng }&date=${ selectedDate?.valueOf() }` );
+    navigate( `/forecast?lat=${ selectedCoordinate?.lat }&lng=${ selectedCoordinate?.lng }&date=${ selectedDate?.valueOf() }` );
   }
 
   const blue = {
@@ -99,7 +99,7 @@ export function HomePage() {
               value={selectedDate}
               onChange={newDate => setSelectedDate( newDate )}
               maxDate={moment( new Date(), 'DD-MM-YYYY' ).add( 14, 'days' )}
-              minDate={moment( new Date( 2010, 0, 1 ), 'DD-MM-YYYY' )}
+              minDate={moment( new Date(), 'DD-MM-YYYY' )}
             />
           </LocalizationProvider>
           <Button onClick={() => navigateToWeatherInfoPage()}>Check weather info</Button>

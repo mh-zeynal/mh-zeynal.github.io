@@ -1,7 +1,7 @@
 import React from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import MakrerUrl from 'assets/marker.svg';
+import MarkerUrl from 'assets/marker.svg';
 import { Marker } from 'react-leaflet';
 
 interface MarkerProps {
@@ -12,7 +12,7 @@ interface MarkerProps {
 export function MapMarker( { position, children }: MarkerProps ) {
 
   const customIcon = L.icon( {
-    iconUrl: MakrerUrl,
+    iconUrl: MarkerUrl,
     iconSize: [ 50, 50 ],
     iconAnchor: [ 25, 50 ]
   } );

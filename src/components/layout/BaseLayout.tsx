@@ -1,19 +1,18 @@
 import React from 'react';
-import { Navbar } from './Navbar';
 import { Outlet } from 'react-router-dom';
 
 export function BaseLayout() {
   return (
-    <>
+    <div className={'flex flex-col h-full'}>
       <header>
-        <Navbar />
+        {/* <Navbar />*/}
       </header>
-      <main className="grow p-2">
+      <main className="grow overflow-y-auto p-2">
         <Outlet />
       </main>
       <footer>
-        <p>Footer Content</p>
+        {/* <Footer />*/}
       </footer>
-    </>
+    </div>
   );
 }
