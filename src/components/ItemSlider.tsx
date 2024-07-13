@@ -48,8 +48,8 @@ export function ItemSlider<T>( { data, renderItem, swiperConfig }: ItemSliderPro
           ) )}
         </div>
         <div className="swiper-pagination absolute !-bottom-7 md:hidden" />
-        <div className="swiper-button-next hidden md:block" />
-        <div className="swiper-button-prev hidden md:block" />
+        <div className="swiper-button-next !hidden md:!block" />
+        <div className="swiper-button-prev !hidden md:!block" />
       </div>
     </div>
   );
