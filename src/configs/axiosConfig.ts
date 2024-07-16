@@ -1,6 +1,6 @@
-import axios, { AxiosError, AxiosResponse } from 'axios';
+import axios, { AxiosError, AxiosInstance, AxiosResponse } from 'axios';
 
-const axiosConfig = axios.create( {
+const axiosConfig: AxiosInstance = axios.create( {
   baseURL: 'http://api.weatherapi.com/v1',
   params: { key: '5d13abf92c884a7c9dd164731230812' }
 } );

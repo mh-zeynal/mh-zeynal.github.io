@@ -1,8 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import axiosConfig from 'configs/axiosConfig';
-import moment from 'moment';
-import { ForecastResponseDto } from 'types/forecastResponse.dto';
+import React, { useEffect } from 'react';
 import KeyboardArrowUpRoundedIcon from '@mui/icons-material/KeyboardArrowUpRounded';
 import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
 import AirRoundedIcon from '@mui/icons-material/AirRounded';
@@ -10,16 +6,20 @@ import WbTwilightRoundedIcon from '@mui/icons-material/WbTwilightRounded';
 import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';
 import { Divider } from '@mui/material';
 import { ForecastCard } from 'components/forecast/ForecastCard';
-import { ItemSlider } from '../components/ItemSlider';
-import { HourResponseDto } from '../types/hourResponse.dto';
+import { ItemSlider } from 'components/ItemSlider';
+import { HourResponseDto } from 'types/hourResponse.dto';
 import { SwiperOptions } from 'swiper/types';
+import moment from 'moment';
+import { useSearchParams } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from 'hooks/storeHooks';
+import { fetchForecastData } from 'store/forecastSlice';
+import { Dispatch } from '@reduxjs/toolkit';
+import { RootState } from 'store';
 
 export function ForecastPage() {
   const [searchParams] = useSearchParams();
-  const [ forecastData, setForecastData ] = useState<ForecastResponseDto | null>(
-    null
-  );
-
+  const dispatch: Dispatch<any> = useAppDispatch();
+  const { forecastData } = useAppSelector( ( state: RootState ) => state.forecast );
   const swiperConfig: SwiperOptions = {
     slidesPerView: 1,
     spaceBetween: 0,
@@ -56,27 +56,11 @@ export function ForecastPage() {
   };
 
   useEffect( () => {
-    ( async() => {
-      try {
-        const latitude = searchParams.get( 'lat' ) || '';
-        const longitude = searchParams.get( 'lng' ) || '';
-        const date = moment( +( searchParams.get( 'date' ) || '0' ) );
+    const latitude = searchParams.get( 'lat' ) || '';
+    const longitude = searchParams.get( 'lng' ) || '';
+    const date = moment( +( searchParams.get( 'date' ) || '0' ) );
 
-        const { data } = await axiosConfig.get<ForecastResponseDto>(
-          '/forecast.json',
-          {
-            params: {
-              q: `${ latitude },${ longitude }`,
-              days: date.diff( new Date(), 'days' )
-            }
-          }
-        );
-
-        setForecastData( data );
-      } catch ( err ) {
-        console.log( 'Error occurred when fetching forecast data' );
-      }
-    } )();
+    dispatch( fetchForecastData( { latitude: +latitude, longitude: +longitude, date: date } ) );
   }, [] );
 
   return (
@@ -100,28 +84,44 @@ export function ForecastPage() {
         <div className={'*:text-sm *:font-bold *:text-gray-500'}>
           <div>
             <KeyboardArrowUpRoundedIcon className={'text-green-500'} />
-            <span>{forecastData?.forecast?.forecastday[0]?.day?.maxtemp_c}°C</span>
+            <span>
+              {forecastData?.forecast?.forecastday[0]?.day?.maxtemp_c}°C
+            </span>
           </div>
           <div>
             <KeyboardArrowDownRoundedIcon className={'text-red-500'} />
-            <span>{forecastData?.forecast?.forecastday[0]?.day?.mintemp_c}°C</span>
+            <span>
+              {forecastData?.forecast?.forecastday[0]?.day?.mintemp_c}°C
+            </span>
           </div>
         </div>
-        <Divider className={'hidden md:block'} orientation='vertical' variant='middle' flexItem />
+        <Divider
+          className={'hidden md:block'}
+          orientation='vertical'
+          variant='middle'
+          flexItem
+        />
         <div className={'hidden md:block'}>
           <AirRoundedIcon fontSize={'large'} className={'text-gray-400'} />
           <span className={'font-bold text-gray-500'}>
             {forecastData?.forecast?.forecastday[0]?.day?.maxwind_kph} k/h
           </span>
         </div>
-        <Divider className={'hidden md:block'} orientation='vertical' variant='middle' flexItem />
+        <Divider
+          className={'hidden md:block'}
+          orientation='vertical'
+          variant='middle'
+          flexItem
+        />
         <div
           className={
             'flex-col *:flex *:gap-1 *:font-bold *:text-gray-500 hidden md:flex'
           }>
           <div>
             <WbTwilightRoundedIcon className={'text-yellow-400'} />
-            <span>{forecastData?.forecast?.forecastday[0]?.astro?.sunrise}</span>
+            <span>
+              {forecastData?.forecast?.forecastday[0]?.astro?.sunrise}
+            </span>
           </div>
           <div>
             <DarkModeRoundedIcon className={'text-blue-400'} />
@@ -140,7 +140,10 @@ export function ForecastPage() {
           </span>
         </div>
         <div className={'block md:hidden'}>
-          <AirRoundedIcon fontSize={'large'} className={'!text-6xl text-gray-400'} />
+          <AirRoundedIcon
+            fontSize={'large'}
+            className={'!text-6xl text-gray-400'}
+          />
           <span className={'font-bold text-2xl text-gray-500'}>
             {forecastData?.forecast?.forecastday[0]?.day?.maxwind_kph} k/h
           </span>
