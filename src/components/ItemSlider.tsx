@@ -16,6 +16,16 @@ interface ItemSliderProps<T> {
 export function ItemSlider<T>( { data, renderItem, swiperConfig }: ItemSliderProps<T> ) {
   const swiperContainerRef = useRef<HTMLDivElement>( null );
 
+  function SliderNavigatorButton( { classes }: { classes: string } ) {
+    return (
+      <div
+        className={
+          `${ classes } !hidden md:!flex !bg-[#849ab2a6] after:text-white p-5 justify-center items-center !w-16 !h-16 rounded-3xl`
+        }
+      />
+    );
+  }
+
   useEffect( () => {
     if ( swiperContainerRef.current ) {
       new Swiper( swiperContainerRef.current, {
@@ -48,8 +58,8 @@ export function ItemSlider<T>( { data, renderItem, swiperConfig }: ItemSliderPro
           ) )}
         </div>
         <div className="swiper-pagination absolute !-bottom-7 md:hidden" />
-        <div className="swiper-button-next !hidden md:!block" />
-        <div className="swiper-button-prev !hidden md:!block" />
+        <SliderNavigatorButton classes={'swiper-button-next'} />
+        <SliderNavigatorButton classes={'swiper-button-prev'} />
       </div>
     </div>
   );

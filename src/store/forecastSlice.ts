@@ -71,7 +71,7 @@ export const forecastSlice = createSlice( {
       } )
       .addCase( fetchForecastData.rejected, ( state, action ) => {
         state.error = action.payload || 'Failed to fetch forecast data';
-        state.isLoading = false;
+        // state.isLoading = false;
       } );
   },
 } );
