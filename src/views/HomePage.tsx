@@ -90,8 +90,8 @@ export function HomePage() {
       <div className='grow flex flex-col md:flex-row w-full items-start gap-4'>
         <Map
           classes='h-96 md:h-full w-full'
-          positionChangeCallback={( position: LatLng ) => setSelectedCoordinate( position )
-          }
+          position={selectedCoordinate}
+          setPosition={setSelectedCoordinate}
         />
         <div className='h-full w-full flex flex-col gap-2 items-center justify-center'>
           <LocalizationProvider dateAdapter={AdapterMoment}>
