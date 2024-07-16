@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.ec0a27e4.css",
-    "main.js": "/static/js/main.702f7afe.js",
+    "main.css": "/static/css/main.44fa8b8e.css",
+    "main.js": "/static/js/main.23502d16.js",
     "static/js/453.08baf928.chunk.js": "/static/js/453.08baf928.chunk.js",
     "static/media/roboto-latin-500-normal.woff2": "/static/media/roboto-latin-500-normal.f25d774ecfe0996f8eb5.woff2",
     "static/media/roboto-latin-700-normal.woff2": "/static/media/roboto-latin-700-normal.227c93190fe7f82de3f8.woff2",
@@ -60,13 +60,13 @@
     "static/media/roboto-greek-ext-400-normal.woff": "/static/media/roboto-greek-ext-400-normal.f708607d2a7290fb8bfa.woff",
     "static/media/roboto-greek-ext-700-normal.woff": "/static/media/roboto-greek-ext-700-normal.249853776d22a271b2b5.woff",
     "index.html": "/index.html",
-    "static/media/marker.svg": "/static/media/marker.83cacd0f2d65f7cf9cc4a8ed1a18dc20.svg",
-    "main.ec0a27e4.css.map": "/static/css/main.ec0a27e4.css.map",
-    "main.702f7afe.js.map": "/static/js/main.702f7afe.js.map",
+    "static/media/mapMarker.svg": "/static/media/mapMarker.8d5f05643a4dd4f8a38ecbf3cfd5e1a7.svg",
+    "main.44fa8b8e.css.map": "/static/css/main.44fa8b8e.css.map",
+    "main.23502d16.js.map": "/static/js/main.23502d16.js.map",
     "453.08baf928.chunk.js.map": "/static/js/453.08baf928.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ec0a27e4.css",
-    "static/js/main.702f7afe.js"
+    "static/css/main.44fa8b8e.css",
+    "static/js/main.23502d16.js"
   ]
 }
