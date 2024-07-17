@@ -204,9 +204,9 @@ export function ForecastPage() {
               sx={{ fontSize: '2rem', width: '200px' }}
             />
           ) : (
-            <h1 className={'font-bold text-gray-500 text-4xl md:text-3xl'}>
+            <span className={'font-bold text-gray-500 text-4xl md:text-3xl'}>
               {forecastData?.location?.name}/{forecastData?.location?.country}
-            </h1>
+            </span>
           )}
           {isLoading ? (
             <Skeleton variant='text' sx={{ fontSize: '1rem', width: '30px' }} />

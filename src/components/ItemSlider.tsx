@@ -5,6 +5,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
+import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
+import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
 
 interface ItemSliderProps<T> {
   data: T[];
@@ -16,13 +18,15 @@ interface ItemSliderProps<T> {
 export function ItemSlider<T>( { data, renderItem, swiperConfig }: ItemSliderProps<T> ) {
   const swiperContainerRef = useRef<HTMLDivElement>( null );
 
-  function SliderNavigatorButton( { classes }: { classes: string } ) {
+  function SliderNavigatorButton( { classes, type }: { classes: string, type: 'next' | 'prev' } ) {
     return (
       <div
         className={
-          `${ classes } !hidden md:!flex !bg-[#849ab2a6] after:text-white p-5 justify-center items-center !w-16 !h-16 rounded-3xl`
+          `${ classes } !hidden md:!flex !bg-[#849ab2a6] after:text-white p-5 justify-center items-center !w-16 !h-16 rounded-3xl text-white`
         }
-      />
+      >
+        {type === 'next' ? <ArrowForwardIosRoundedIcon /> : <ArrowBackIosNewRoundedIcon />}
+      </div>
     );
   }
 
@@ -58,8 +62,8 @@ export function ItemSlider<T>( { data, renderItem, swiperConfig }: ItemSliderPro
           ) )}
         </div>
         <div className="swiper-pagination absolute !-bottom-7 md:hidden" />
-        <SliderNavigatorButton classes={'swiper-button-next'} />
-        <SliderNavigatorButton classes={'swiper-button-prev'} />
+        <SliderNavigatorButton classes={'swiper-button-next'} type={'next'} />
+        <SliderNavigatorButton classes={'swiper-button-prev'} type={'prev'} />
       </div>
     </div>
   );
