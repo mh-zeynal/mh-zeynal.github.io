@@ -84,9 +84,6 @@ export function HomePage() {
 
   return (
     <div className='flex flex-col h-full gap-4'>
-      <span className='font-bold text-3xl text-pretty'>
-        Choose location and date info
-      </span>
       <div className='grow flex flex-col md:flex-row w-full items-start gap-4'>
         <Map
           classes='h-96 md:h-full w-full'
