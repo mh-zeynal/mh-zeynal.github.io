@@ -8,13 +8,15 @@ import moment from 'moment';
 import { DatePickerInput } from 'components/home/DatePickerInput';
 
 export function HomePage() {
-  const [ selectedDate, setSelectedDate ] = useState<moment.Moment | null>( null );
+  const [ selectedDate, setSelectedDate ] = useState<moment.Moment | null>( moment() );
   const [ dateError, setDateError ] = useState<DateValidationError | null>( null );
   const [ selectedCoordinate, setSelectedCoordinate ] = useState<LatLng | null>( null );
+  const [ showMapError, setShowMapError ] = useState( false );
   const navigate = useNavigate();
 
   const navigateToWeatherInfoPage = () => {
     if ( dateError || !selectedDate || !selectedCoordinate ) {
+      setShowMapError( !selectedCoordinate ); // Show error if no coordinate is selected
       return;
     }
 
@@ -27,13 +29,21 @@ export function HomePage() {
     navigate( `/forecast?${ new URLSearchParams( queryParams ).toString() }` );
   };
 
+  const handleMapInteraction = () => {
+    if ( showMapError ) {
+      setShowMapError( false );
+    }
+  };
+
   return (
     <div className="flex flex-col gap-4 pb-20 box-border">
       <div className="grow flex flex-col md:flex-row w-full items-start gap-4">
         <Map
-          classes="h-96 h-full w-full"
+          classes="h-full w-full"
           position={selectedCoordinate}
           setPosition={setSelectedCoordinate}
+          showError={showMapError}
+          onMapInteraction={handleMapInteraction}
         />
         <div className="h-full w-full flex flex-col gap-2 items-center justify-center">
           <DatePickerInput

@@ -64,12 +64,12 @@ export function DatePickerInput( {
     <LocalizationProvider dateAdapter={AdapterMoment}>
       <Box width={246}>
         <DatePicker
-          className={`*:rounded-lg ${ classes }`}
+          className={`*:rounded-lg w-full ${ classes }`}
           value={value}
           onChange={handleChange}
           maxDate={maxDate}
           minDate={minDate}
-          defaultValue={moment( new Date(), 'DD/MM/YYYY' )}
+          defaultValue={value}
           onError={handleError}
           slotProps={{
             textField: {
