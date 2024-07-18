@@ -20,7 +20,7 @@ export function Footer() {
         <li>
           <a
             className={'h-12 flex items-center gap-2 text-white font-medium'}
-            href='https://github.com/mh-zeynal/mh-zeynal.github.io'
+            href='https://github.com/mh-zeynal'
           >
             <img className={'h-full'} src={GithubLogoUrl} alt="github" />
             <span>mh-zeynal</span>
