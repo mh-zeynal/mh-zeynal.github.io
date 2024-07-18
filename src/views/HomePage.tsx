@@ -25,7 +25,7 @@ export function HomePage() {
     <div className='flex flex-col gap-4 pb-24 box-border'>
       <div className='grow flex flex-col md:flex-row w-full items-start gap-4'>
         <Map
-          classes='h-96 md:h-full w-full'
+          classes='h-96 h-full w-full'
           position={selectedCoordinate}
           setPosition={setSelectedCoordinate}
         />
