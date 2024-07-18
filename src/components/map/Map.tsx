@@ -37,10 +37,11 @@ export default function Map( {
     <div className={`map-box rounded-xl overflow-hidden ${ classes }`}>
       <MapContainer
         center={[ 35.699648, 51.338359 ]}
-        zoom={12}
+        zoom={11}
+        maxZoom={11}
         scrollWheelZoom={true}
         touchZoom={true}
-        style={{ height: '100%', width: '100%' }}
+        style={{ height: '100%', width: '100%', zIndex: 0 }}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
