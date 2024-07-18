@@ -5,7 +5,7 @@ import moment from 'moment';
 
 export function Footer() {
   return (
-    <section className={'relative h-80 overflow-hidden flex flex-col justify-end *:z-10'}>
+    <section className={'relative h-96 overflow-hidden flex flex-col justify-end *:z-10'}>
       <img className={'absolute top-0 h-full md:h-auto'} src={FooterBackgroundUrl} alt="waving water svg" />
       <ul className={'socials space-y-2 list-none'}>
         <li>
