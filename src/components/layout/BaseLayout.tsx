@@ -6,7 +6,7 @@ import { Footer } from './Footer';
 export function BaseLayout() {
   return (
     <div className={'flex flex-col h-full overflow-y-auto'}>
-      <header className={'fixed w-full z-50'}>
+      <header className={'!fixed w-full z-50'}>
         <Navbar />
       </header>
       <main className="mt-14 p-2 min-h-screen *:h-full">
