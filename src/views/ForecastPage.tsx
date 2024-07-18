@@ -6,7 +6,7 @@ import WbTwilightRoundedIcon from '@mui/icons-material/WbTwilightRounded';
 import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';
 import { Divider, Skeleton } from '@mui/material';
 import { ForecastCard } from 'components/forecast/ForecastCard';
-import { ItemSlider } from 'components/ItemSlider';
+import { ItemSlider } from 'components/forecast/ItemSlider';
 import { HourResponseDto } from 'types/hourResponse.dto';
 import { SwiperOptions } from 'swiper/types';
 import moment from 'moment';
