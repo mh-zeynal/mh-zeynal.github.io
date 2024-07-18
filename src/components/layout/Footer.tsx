@@ -1,6 +1,7 @@
 import FooterBackgroundUrl from 'assets/waveBackground.svg';
 import GithubLogoUrl from 'assets/github.svg';
 import LinkedinLogoUrl from 'assets/linkein.svg';
+import moment from 'moment';
 
 export function Footer() {
   return (
@@ -27,7 +28,7 @@ export function Footer() {
         </li>
       </ul>
       <p className={'legal text-center text-white'}>
-        © 2023 All rights reserved
+        © {moment().year()} All rights reserved
       </p>
     </section>
   );
