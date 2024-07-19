@@ -5,6 +5,8 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import "assets/styles/driver";
+@import "assets/styles/mui";
 
 @layer base {
   html {
@@ -52,14 +54,4 @@ body {
 .swiper-pagination-bullet-active {
   width: 30px !important;
   border-radius: 15px !important;
-}
-
-.MuiDateCalendar-root, .MuiPickersLayout-root {
-  @apply bg-base;
-  .MuiPickersDay-today {
-    @apply border-text;
-  }
-  * {
-    @apply text-text;
-  }
 }

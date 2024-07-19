@@ -1,0 +1,55 @@
+.driver-popover {
+  background-color: var(--color-base) !important;
+  color: var(--color-text) !important;
+}
+
+.driver-popover-arrow-side-right {
+  border-right-color: var(--color-base) !important;
+}
+
+.driver-popover-arrow-side-top {
+  border-top-color: var(--color-base) !important;
+}
+
+.driver-popover-arrow-side-left {
+  border-left-color: var(--color-base) !important;
+}
+
+.driver-popover-arrow-side-bottom {
+  border-bottom-color: var(--color-base) !important;
+}
+
+.driver-popover-progress-text {
+  color: var(--color-text) !important;
+}
+
+.driver-popover-close-btn {
+  color: var(--color-text) !important;
+  font-size: 25px !important;
+  &:hover {
+    color: var(--color-error) !important;
+  }
+}
+
+.driver-popover-next-btn, .driver-popover-prev-btn {
+  @apply rounded-xl !important;
+  @apply h-9 !important;
+  @apply w-fit !important;
+  @apply min-w-20 !important;
+  @apply text-center !important;
+  @apply text-sm !important;
+  @apply font-bold !important;
+  text-shadow: none !important;
+}
+
+.driver-popover-next-btn {
+  background-color: var(--color-primary) !important;
+  color: white !important;
+  border-style: none !important;
+}
+
+.driver-popover-prev-btn {
+  border-color: var(--color-text) !important;
+  color: var(--color-text) !important;
+  background-color: transparent !important;
+}

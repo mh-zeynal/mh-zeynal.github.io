@@ -1,0 +1,9 @@
+.MuiDateCalendar-root, .MuiPickersLayout-root {
+  @apply bg-base;
+  .MuiPickersDay-today {
+    @apply border-text;
+  }
+  * {
+    @apply text-text;
+  }
+}
