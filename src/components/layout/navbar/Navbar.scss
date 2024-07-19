@@ -1,5 +1,5 @@
 .gradient-box {
-  background: linear-gradient(0deg, #4b6cb7, #182848);
+  background: linear-gradient(0deg, var(--color-secondary), var(--color-primary));
   background-size: 600% 600%;
 
   animation: gradientAnimation 14s ease infinite;

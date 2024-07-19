@@ -93,7 +93,7 @@ export function ForecastPage() {
                 sx={{ fontSize: '1rem', width: '48px' }}
               />
             ) : (
-              <span className={'text-lg'}>
+              <span className={'text-lg text-text'}>
                 {forecastData?.forecast?.forecastday[0]?.day?.condition?.text}
               </span>
             )}
@@ -103,7 +103,7 @@ export function ForecastPage() {
                 sx={{ fontSize: '1rem', width: '48px' }}
               />
             ) : (
-              <span className={'text-sm font-bold text-gray-500'}>
+              <span className={'text-sm font-bold text-text'}>
                 {forecastData?.forecast?.forecastday[0]?.day?.avgtemp_c}°C
               </span>
             )}
@@ -112,7 +112,7 @@ export function ForecastPage() {
         <Divider orientation='vertical' variant='middle' flexItem />
         <div
           className={
-            'flex flex-col gap-1 *:text-sm *:font-bold *:text-gray-500 *:flex *:gap-1'
+            'flex flex-col gap-1 *:text-sm *:font-bold *:text-text *:flex *:gap-1'
           }>
           <div>
             <KeyboardArrowUpRoundedIcon className={'text-green-500'} />
@@ -152,7 +152,7 @@ export function ForecastPage() {
           {isLoading ? (
             <Skeleton variant='text' sx={{ fontSize: '2rem', width: '40px' }} />
           ) : (
-            <span className={'font-bold text-gray-500'}>
+            <span className={'font-bold text-text'}>
               {forecastData?.forecast?.forecastday[0]?.day?.maxwind_kph} k/h
             </span>
           )}
@@ -165,7 +165,7 @@ export function ForecastPage() {
         />
         <div
           className={
-            'flex-col *:flex *:gap-1 *:font-bold *:text-gray-500 *:items-center hidden md:flex'
+            'flex-col *:flex *:gap-1 *:font-bold *:text-text *:items-center hidden md:flex'
           }>
           <div>
             <WbTwilightRoundedIcon className={'text-yellow-400'} />
@@ -204,14 +204,14 @@ export function ForecastPage() {
               sx={{ fontSize: '2rem', width: '200px' }}
             />
           ) : (
-            <span className={'font-bold text-gray-500 text-4xl md:text-3xl'}>
+            <span className={'font-bold text-text text-4xl md:text-3xl'}>
               {forecastData?.location?.name}/{forecastData?.location?.country}
             </span>
           )}
           {isLoading ? (
             <Skeleton variant='text' sx={{ fontSize: '1rem', width: '30px' }} />
           ) : (
-            <span className={'text-lg md:text-xs text-gray-500'}>
+            <span className={'text-lg md:text-xs text-text'}>
               {forecastData?.location?.lat}, {forecastData?.location?.lon}
             </span>
           )}
@@ -224,14 +224,14 @@ export function ForecastPage() {
           {isLoading ? (
             <Skeleton variant='text' sx={{ fontSize: '2rem', width: '70px' }} />
           ) : (
-            <span className={'font-bold text-2xl text-gray-500'}>
+            <span className={'font-bold text-2xl text-text'}>
               {forecastData?.forecast?.forecastday[0]?.day?.maxwind_kph} k/h
             </span>
           )}
         </div>
         <div
           className={
-            'flex flex-col *:flex *:gap-1 *:items-center *:font-bold *:text-gray-500 md:hidden'
+            'flex flex-col *:flex *:gap-1 *:items-center *:font-bold *:text-text md:hidden'
           }>
           <div className={'flex items-center'}>
             <WbTwilightRoundedIcon className={'!text-6xl text-yellow-400'} />

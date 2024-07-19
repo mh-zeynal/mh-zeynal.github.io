@@ -6,19 +6,39 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@layer base {
+  html {
+    --color-primary: #182848;
+    --color-secondary: #4b6cb7;
+    --color-accent: #4b5563;
+    --color-base: #ffffff;
+    --color-info: #0ea5e9;
+    --color-success: #16a34a;
+    --color-warning: #f59e0b;
+    --color-error: #f43f5e;
+    --color-text: #6B7280FF;
+  }
+}
+
+html[data-mode="light"] {
+  --color-base: #ffffff;
+}
+
+
+html[data-mode="dark"] {
+  --color-primary: #266ecc;
+  --color-base: #2a2f33;
+  --color-text: #ffffff;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
 
 #root {
@@ -26,9 +46,20 @@ code {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  background-color: var(--color-base);
 }
 
 .swiper-pagination-bullet-active {
   width: 30px !important;
   border-radius: 15px !important;
+}
+
+.MuiDateCalendar-root, .MuiPickersLayout-root {
+  @apply bg-base;
+  .MuiPickersDay-today {
+    @apply border-text;
+  }
+  * {
+    @apply text-text;
+  }
 }

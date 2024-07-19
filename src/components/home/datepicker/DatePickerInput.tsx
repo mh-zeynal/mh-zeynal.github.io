@@ -7,6 +7,7 @@ import {
 import moment from 'moment/moment';
 import React, { useMemo } from 'react';
 import { Box } from '@mui/material';
+import './DatePickerInput.scss';
 
 interface DatePickerProps {
   value: moment.Moment | null;
@@ -64,7 +65,7 @@ export function DatePickerInput( {
     <LocalizationProvider dateAdapter={AdapterMoment}>
       <Box width={246}>
         <DatePicker
-          className={`*:rounded-lg w-full ${ classes }`}
+          className={`datepicker *:rounded-lg w-full ${ classes }`}
           value={value}
           onChange={handleChange}
           maxDate={maxDate}

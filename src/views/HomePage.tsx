@@ -5,7 +5,7 @@ import { Button } from '@mui/material';
 import { DateValidationError } from '@mui/x-date-pickers';
 import Map from 'components/map/Map';
 import moment from 'moment';
-import { DatePickerInput } from 'components/home/DatePickerInput';
+import { DatePickerInput } from 'components/home/datepicker/DatePickerInput';
 
 export function HomePage() {
   const [ selectedDate, setSelectedDate ] = useState<moment.Moment | null>( moment() );
@@ -45,7 +45,7 @@ export function HomePage() {
           showError={showMapError}
           onMapInteraction={handleMapInteraction}
         />
-        <div className="h-full w-full flex flex-col gap-2 items-center justify-center">
+        <div className="h-full w-full flex flex-col gap-5 items-center justify-center">
           <DatePickerInput
             value={selectedDate}
             onValueChange={setSelectedDate}
@@ -53,6 +53,7 @@ export function HomePage() {
             minDate={moment()}
             error={dateError}
             onError={setDateError}
+            classes={'dark:*:text-white'}
           />
           <Button
             className="text-white bg-primary h-12 w-60 text-lg rounded-lg"
